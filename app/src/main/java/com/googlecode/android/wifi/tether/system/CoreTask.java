@@ -28,8 +28,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Hashtable;
 
-import com.googlecode.android.wifi.tether.system.NativeTask;
-
 public class CoreTask {
 
     public static final String TAG = "TETHER -> CoreTask";
@@ -45,7 +43,7 @@ public class CoreTask {
     }
 
     public class Whitelist {
-        /*
+        /**
          * Maintains the whitelist of allowed MAC addresses.
          */
         public ArrayList<String> whitelist;
@@ -61,8 +59,9 @@ public class CoreTask {
 
         public boolean remove() {
             File file = new File(DATA_FILE_PATH + "/conf/whitelist_mac.conf");
-            if (file.exists())
+            if (file.exists()) {
                 return file.delete();
+            }
             return false;
         }
 

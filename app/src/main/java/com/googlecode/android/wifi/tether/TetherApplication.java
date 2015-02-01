@@ -23,7 +23,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 
-
 import com.googlecode.android.wifi.tether.system.Configuration;
 import com.googlecode.android.wifi.tether.system.CoreTask;
 
@@ -34,6 +33,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Hashtable;
 
+@SuppressWarnings("ALL")
 public class TetherApplication extends Application {
 
     public static final String MSG_TAG = "TETHER -> TetherApplication";
@@ -44,13 +44,6 @@ public class TetherApplication extends Application {
 
     // TetherService
     //private TetherService tetherService = null;
-
-    // Client-Connect-Thread
-    public static final int CLIENT_CONNECT_ACDISABLED = 0;
-    public static final int CLIENT_CONNECT_AUTHORIZED = 1;
-    public static final int CLIENT_CONNECT_NOTAUTHORIZED = 2;
-
-    //public String tetherNetworkDevice = null;
 
     // PowerManagement
     private PowerManager powerManager = null;
@@ -510,8 +503,8 @@ public class TetherApplication extends Application {
         displayMessageHandler.sendMessage(msg);
     }
 
-    private String copyFile(String filename, String permission, int ressource) {
-        String result = this.copyFile(filename, ressource);
+    private String copyFile(String filename, String permission, int resource) {
+        String result = this.copyFile(filename, resource);
         if (result != null) {
             return result;
         }
@@ -521,10 +514,10 @@ public class TetherApplication extends Application {
         return result;
     }
 
-    private String copyFile(String filename, int ressource) {
+    private String copyFile(String filename, int resource) {
         File outFile = new File(filename);
         Log.d(MSG_TAG, "Copying file '" + filename + "' ...");
-        InputStream is = this.getResources().openRawResource(ressource);
+        InputStream is = this.getResources().openRawResource(resource);
         byte buf[] = new byte[1024];
         int len;
         try {

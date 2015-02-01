@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
         endAdhoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Sending intent to TetherServiceReceiver that we want to start the service-now
+                // Sending intent to TetherServiceReceiver that we want to stop the service-now
                 Intent intent = new Intent(TetherService.SERVICEMANAGE_INTENT);
                 intent.setAction(TetherService.SERVICEMANAGE_INTENT);
                 intent.putExtra("state", TetherService.SERVICE_STOP);
