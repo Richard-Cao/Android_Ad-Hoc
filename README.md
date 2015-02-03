@@ -11,6 +11,7 @@
 ###使用步骤
 ####导入adhoclibrary库到自己的项目当中
 修改自己app的gradle文件中的applicationId为"com.googlecode.android.wifi.tether"
+
 在src/main文件夹中建立名为jniLibs的文件夹，然后再在jniLibs文件夹中建立armeabi文件夹，在armeabi文件夹中放入libwtnativetask.so库
 简要说明路径为：app/src/main/jniLibs/armeabi/libwtnativetask.so
 
