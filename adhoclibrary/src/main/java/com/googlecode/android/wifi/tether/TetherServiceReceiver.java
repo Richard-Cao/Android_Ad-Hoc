@@ -24,9 +24,6 @@ public class TetherServiceReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         Intent serviceIntent = new Intent();
-//        serviceIntent.setComponent(
-//                new ComponentName("com.njupt.caolicheng.adhocdemo",
-//                        "com.njupt.caolicheng.adhocdemo.TetherService"));
         serviceIntent.setClass(context,TetherService.class);
 
         Log.d(TAG, "onReceive " + intent.getAction());
@@ -34,6 +31,7 @@ public class TetherServiceReceiver extends BroadcastReceiver {
             switch (intent.getIntExtra("state", TetherService.SERVICE_START)) {
                 case TetherService.SERVICE_START:
                     if (TetherService.singleton == null) {
+                        Log.e("11","123");
                         context.startService(serviceIntent);
                     } else {
                         sendServiceBroadcast(context, TetherService.SERVICE_STARTED);

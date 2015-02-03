@@ -1,9 +1,7 @@
-package com.googlecode.android.wifi.tether.system;
+package com.googlecode.android.wifi.tether;
 
 import android.content.Context;
 import android.content.Intent;
-
-import com.googlecode.android.wifi.tether.TetherService;
 
 /**
  * Created by caolicheng on 15/2/3.

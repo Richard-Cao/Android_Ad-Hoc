@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.googlecode.android.wifi.tether.system.AdhocControl;
+import com.googlecode.android.wifi.tether.AdhocControl;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -23,16 +23,16 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Log.d(TAG, "StartBtn pressed ...");
                 AdhocControl.start(getApplicationContext());
-                startAdhoc.setClickable(false);
-                endAdhoc.setClickable(true);
+//                startAdhoc.setClickable(false);
+//                endAdhoc.setClickable(true);
             }
         });
         endAdhoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AdhocControl.stop(getApplicationContext());
-                startAdhoc.setClickable(true);
-                endAdhoc.setClickable(false);
+//                startAdhoc.setClickable(true);
+//                endAdhoc.setClickable(false);
             }
         });
     }
