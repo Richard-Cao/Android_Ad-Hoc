@@ -2,7 +2,5 @@
 <resources>
 
     <string name="app_name">adhoc发起组网模块</string>
-    <string name="global_application_installed">二进制程序及配置文件安装完毕!</string>
-    <string name="global_application_error_restartsecwifi">无法重启加密WiFi!</string>
 
 </resources>
