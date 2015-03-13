@@ -22,16 +22,13 @@ public class TetherServiceReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
         Intent serviceIntent = new Intent();
         serviceIntent.setClass(context,TetherService.class);
-
         Log.d(TAG, "onReceive " + intent.getAction());
         if (intent.getAction().equals(TetherService.SERVICEMANAGE_INTENT)) {
             switch (intent.getIntExtra("state", TetherService.SERVICE_START)) {
                 case TetherService.SERVICE_START:
                     if (TetherService.singleton == null) {
-                        Log.e("11","123");
                         context.startService(serviceIntent);
                     } else {
                         sendServiceBroadcast(context, TetherService.SERVICE_STARTED);

@@ -2,7 +2,6 @@ package com.njupt.adhoc;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,18 +20,17 @@ public class MainActivity extends ActionBarActivity {
         startAdhoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "StartBtn pressed ...");
                 AdhocControl.start(getApplicationContext());
-//                startAdhoc.setClickable(false);
-//                endAdhoc.setClickable(true);
+                startAdhoc.setClickable(false);
+                endAdhoc.setClickable(true);
             }
         });
         endAdhoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AdhocControl.stop(getApplicationContext());
-//                startAdhoc.setClickable(true);
-//                endAdhoc.setClickable(false);
+                startAdhoc.setClickable(true);
+                endAdhoc.setClickable(false);
             }
         });
     }
