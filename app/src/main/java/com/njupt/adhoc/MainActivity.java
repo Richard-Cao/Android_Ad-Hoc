@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import com.googlecode.android.wifi.tether.AdhocControl;
 
-
 public class MainActivity extends ActionBarActivity {
     public static final String TAG = "TETHER -> MainActivity";
 
