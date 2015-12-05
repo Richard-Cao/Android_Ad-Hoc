@@ -1,4 +1,4 @@
-#基于Google的开源项目wifi_tether分离出来的adhoc发起组网独立模块
+#基于Google的开源项目[android-wifi_tether](https://code.google.com/p/android-wifi-tether/)分离出来的adhoc发起组网独立模块
 
 ###使用要求
 手机需要有ROOT权限，并且给本软件授权，点击发起组网即可，关闭的话点击关闭组网即可。
@@ -55,3 +55,4 @@ AdhocControl.start(getApplicationContext());
 ```java
 AdhocControl.stop(getApplicationContext());
 ```
+借鉴并感谢[android-wifi-tether](https://code.google.com/p/android-wifi-tether/)项目的开源代码
