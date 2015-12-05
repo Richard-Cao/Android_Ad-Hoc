@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.googlecode.android.wifi.tether">
+    package="com.njupt.adhoc">
 
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -16,14 +16,14 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
-        android:name=".TetherApplication"
+        android:name="com.googlecode.android.wifi.tether.TetherApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <service
             android:enabled="true"
-            android:name=".TetherService" />
+            android:name="com.googlecode.android.wifi.tether.TetherService" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <receiver
-            android:name=".TetherServiceReceiver"
+            android:name="com.googlecode.android.wifi.tether.TetherServiceReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.googlecode.android.wifi.tether.intent.MANAGE" />

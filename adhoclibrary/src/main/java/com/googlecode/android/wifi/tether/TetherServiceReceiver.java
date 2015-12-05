@@ -13,7 +13,6 @@
 package com.googlecode.android.wifi.tether;
 
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -23,13 +22,8 @@ public class TetherServiceReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
         Intent serviceIntent = new Intent();
-//        serviceIntent.setComponent(
-//                new ComponentName("com.njupt.caolicheng.adhocdemo",
-//                        "com.njupt.caolicheng.adhocdemo.TetherService"));
         serviceIntent.setClass(context,TetherService.class);
-
         Log.d(TAG, "onReceive " + intent.getAction());
         if (intent.getAction().equals(TetherService.SERVICEMANAGE_INTENT)) {
             switch (intent.getIntExtra("state", TetherService.SERVICE_START)) {

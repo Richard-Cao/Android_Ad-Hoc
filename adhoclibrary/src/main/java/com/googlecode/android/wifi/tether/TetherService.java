@@ -211,7 +211,6 @@ public class TetherService extends Service {
         super.onDestroy();
     }
 
-
     // This is the old onStart method that will be called on the pre-2.0
     // platform.  On 2.0 or later we override onStartCommand() so this
     // method will not be called.
@@ -232,7 +231,6 @@ public class TetherService extends Service {
     void handleCommand(Intent intent) {
         // Nothing
     }
-
 
     // ===========================================================
     // Public Methods
@@ -279,7 +277,6 @@ public class TetherService extends Service {
                 boolean currentEncryptionEnabled = application.settings.getBoolean("encpref", false);
                 String currentPassphrase = application.settings.getString("passphrasepref", application.DEFAULT_PASSPHRASE);
 
-
                 if (setupMethod.equals("auto")) {
                     setupMethod = application.getDeviceParameters().getAutoSetupMethod();
                 }
@@ -309,7 +306,6 @@ public class TetherService extends Service {
                     }
                 } else {
                     //regular wifi tether mode
-
                     //TODO: This is a hack to load drivers outside tether script
                     if (reloadDriver2) {
                         Log.d(TAG, ">>insmod outside tether start");
@@ -342,7 +338,6 @@ public class TetherService extends Service {
                         state = STATE_FAILURE_LOG;
                     } else {
                         trafficCounterEnable(true);
-
                         TetherService.this.application.preferenceEditor.putBoolean("autoshutdownidle", false);
                         TetherService.this.application.preferenceEditor.putBoolean("autoshutdowntimer", false);
                         TetherService.this.application.preferenceEditor.putBoolean("autoshutdownquota", false);
@@ -368,7 +363,6 @@ public class TetherService extends Service {
                             WimaxHelper.samsungWimax(TetherService.this, true);
                         }
                     }
-
                 }
                 sendStateBroadcast(state);
             }
@@ -445,7 +439,6 @@ public class TetherService extends Service {
                             }
                         }
                     }
-
                 }
                 // Re-Enable wifi if it was enabled
                 enableWifiAndBt(false);
@@ -533,7 +526,6 @@ public class TetherService extends Service {
                     }
                 } else {
                     //regular wifitether mode
-
                     //TODO: This is a hack to load drivers outside tether script
                     if (reloadDriver2) {
                         Log.d(TAG, ">>insmod outside tether start");
@@ -572,9 +564,7 @@ public class TetherService extends Service {
                     if (!wifiStatus.equals("running")) {
                         state = STATE_FAILURE_LOG;
                     } else {
-
                         trafficCounterEnable(true);
-
                         TetherService.this.application.preferenceEditor.putBoolean("autoshutdownidle", false);
                         TetherService.this.application.preferenceEditor.putBoolean("autoshutdowntimer", false);
                         TetherService.this.application.preferenceEditor.putBoolean("autoshutdownquota", false);
@@ -605,7 +595,6 @@ public class TetherService extends Service {
             Log.d(TAG, "Restarting iptables for access-control-changes!");
             if (!CoreTask.runRootCommand(CoreTask.DATA_FILE_PATH + "/bin/tether restartsecwifi")) {
                 application.displayToastMessage(getString(R.string.global_application_error_restartsecwifi));
-                return;
             }
         } catch (Exception e) {
             // nothing
@@ -1082,7 +1071,6 @@ public class TetherService extends Service {
         }
     }
 
-
     class ShutdownTimerChecker implements Runnable {
         private static final int INTERVAL = 1;  // Interval in seconds.
 
@@ -1124,7 +1112,6 @@ public class TetherService extends Service {
             sendBroadcast(intent);
         }
     }
-
 
     class ShutdownQuotaChecker implements Runnable {
         private static final int INTERVAL = 1;  // Interval in seconds.
